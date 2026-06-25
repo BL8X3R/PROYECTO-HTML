@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 160" role="img" aria-label="Space guide">
+  <circle cx="92" cy="65" r="54" fill="#211b89"/>
+  <circle cx="92" cy="65" r="29" fill="#ff4f92"/>
+  <path d="M54 104c20 24 56 38 102 42V92c-18 23-43 23-74 4L54 104Z" fill="#86aeea"/>
+  <path d="M121 87c22 12 33 31 35 59" stroke="#fff" stroke-width="8" fill="none"/>
+  <path d="M39 100c22 8 44 21 55 43" stroke="#baff26" stroke-width="10" fill="none"/>
+  <path d="M58 28c34-33 83 0 77 50" stroke="#baff26" stroke-width="8" fill="none"/>
+</svg>

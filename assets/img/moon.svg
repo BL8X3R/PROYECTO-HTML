@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Moon">
+  <defs>
+    <radialGradient id="mo" cx="35%" cy="30%" r="75%">
+      <stop stop-color="#d6d9d5"/>
+      <stop offset=".6" stop-color="#868b87"/>
+      <stop offset="1" stop-color="#343836"/>
+    </radialGradient>
+  </defs>
+  <circle cx="60" cy="60" r="50" fill="url(#mo)"/>
+  <g fill="#575c59" opacity=".55">
+    <circle cx="42" cy="48" r="8"/>
+    <circle cx="72" cy="38" r="6"/>
+    <circle cx="76" cy="78" r="11"/>
+    <circle cx="39" cy="79" r="5"/>
+  </g>
+</svg>

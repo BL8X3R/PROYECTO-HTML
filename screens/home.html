@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - UberX x SpaceX</title>
+    <link rel="stylesheet" href="../css/app.css" />
+  </head>
+  <body>
+    <!--
+      Home de la aplicacion.
+      Los botones funcionan como enlaces de maqueta hacia otras pantallas.
+    -->
+    <main class="phone shell home-screen">
+      <div class="status-bar" aria-hidden="true">
+        <span>12:31</span>
+        <span class="status-icons">▮▮ ︿ ▱</span>
+      </div>
+
+      <header class="user-header">
+        <img class="avatar" src="../assets/img/astronaut.svg" alt="" />
+        <h1>William Teig</h1>
+      </header>
+
+      <section class="safety-card glass" aria-label="Consejo de seguridad">
+        <div>
+          <h2>Always Wear Your Helmet When Traveling In Space</h2>
+          <a href="./destination.html">About Safe Space Flight <span aria-hidden="true">›</span></a>
+        </div>
+        <img src="../assets/img/space-guide.svg" alt="" />
+      </section>
+
+      <nav class="quick-actions" aria-label="Acciones rapidas">
+        <a href="./destination.html">
+          <img src="../assets/icons/rocket.svg" alt="" />
+          <span>Travel</span>
+        </a>
+        <a href="./destination.html">
+          <img src="../assets/icons/planet-ring.svg" alt="" />
+          <span>Explore</span>
+        </a>
+        <a href="./destination.html">
+          <img src="../assets/icons/robot.svg" alt="" />
+          <span>Book</span>
+        </a>
+      </nav>
+
+      <form class="search-card glass" role="search">
+        <label class="visually-hidden" for="destination-search">Buscar destino</label>
+        <input id="destination-search" type="search" placeholder="Where to...?" />
+        <button type="button" aria-label="Hora del viaje">
+          <span aria-hidden="true">◷</span>
+          Now
+          <span aria-hidden="true">⌄</span>
+        </button>
+      </form>
+
+      <section class="destination-list" aria-label="Destinos populares">
+        <a class="destination-row" href="./destination.html">
+          <img src="../assets/img/earth.svg" alt="" />
+          <span><strong>Earth</strong><small>Solar System, Planet 4</small></span>
+        </a>
+        <a class="destination-row" href="./destination.html">
+          <img src="../assets/img/mars.svg" alt="" />
+          <span><strong>Mars</strong><small>Solar System, Planet 5</small></span>
+        </a>
+        <a class="destination-row" href="./destination.html">
+          <img src="../assets/img/space-station.svg" alt="" />
+          <span><strong>International Space Station</strong><small>Low Earth Orbit</small></span>
+        </a>
+        <a class="destination-row" href="./destination.html">
+          <img src="../assets/img/moon.svg" alt="" />
+          <span><strong>Moon</strong><small>Natural Earth Satellite</small></span>
+        </a>
+      </section>
+
+      <nav class="bottom-nav glass" aria-label="Navegacion inferior">
+        <a aria-current="page" href="./home.html"><span aria-hidden="true">⌂</span>Home</a>
+        <span class="nav-divider" aria-hidden="true"></span>
+        <a href="./destination.html"><span aria-hidden="true">☄</span>Journeys</a>
+      </nav>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Earth">
+  <defs>
+    <radialGradient id="g" cx="35%" cy="30%" r="70%">
+      <stop stop-color="#b7e2ff"/>
+      <stop offset=".45" stop-color="#326aa7"/>
+      <stop offset="1" stop-color="#102848"/>
+    </radialGradient>
+  </defs>
+  <circle cx="60" cy="60" r="50" fill="url(#g)"/>
+  <path fill="#9fca88" d="M28 45c15-17 30-8 35-17 8 11-7 18-17 19-7 1-10 8-18-2Zm42 18c18-4 29 6 24 20-12-7-16 9-30 2-14-8-3-20 6-22ZM36 71c7 0 15 3 17 12-13 8-26-2-17-12Z"/>
+  <path fill="#f4f7fb" opacity=".75" d="M20 55c12-6 24-6 36-1 14 6 23 1 36 0 4 5 7 12 8 20-21-7-35 7-58-3-8-4-14-7-22-7v-9Z"/>
+</svg>

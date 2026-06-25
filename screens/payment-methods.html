@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Methods - UberX x SpaceX</title>
+    <link rel="stylesheet" href="../css/app.css" />
+  </head>
+  <body>
+    <!--
+      Pantalla de metodos de pago.
+      Los iconos son decorativos y cada fila se marca como button para simular acciones.
+    -->
+    <main class="phone shell payments-screen">
+      <header class="page-header">
+        <a href="./destination.html" aria-label="Back">←</a>
+        <h1>Payment Methods</h1>
+      </header>
+
+      <form class="payment-search" role="search">
+        <label class="visually-hidden" for="payment-search-input">Buscar metodo de pago</label>
+        <span aria-hidden="true">⌕</span>
+        <input id="payment-search-input" type="search" placeholder="Search payment methods" />
+      </form>
+
+      <section class="payment-list" aria-label="Metodos guardados">
+        <button class="payment-card" type="button">
+          <img src="../assets/icons/mastercard.svg" alt="" />
+          <span><strong>**** **** **** 1234</strong><small>Expires 12/25</small></span>
+          <b>Default</b>
+          <i aria-hidden="true">⋮</i>
+        </button>
+
+        <button class="payment-card" type="button">
+          <img src="../assets/icons/amex.svg" alt="" />
+          <span><strong>**** **** **** 5678</strong><small>Expires 01/26</small></span>
+          <i class="edit" aria-hidden="true">✎</i>
+          <i class="delete" aria-hidden="true">▱</i>
+        </button>
+
+        <button class="payment-card" type="button">
+          <img src="../assets/icons/paypal.svg" alt="" />
+          <span><strong>PayPal</strong></span>
+          <i class="edit" aria-hidden="true">✎</i>
+          <i class="delete" aria-hidden="true">▱</i>
+        </button>
+      </section>
+
+      <a class="add-method" href="./receipt.html">Add New Method</a>
+    </main>
+  </body>
+</html>

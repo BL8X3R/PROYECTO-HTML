@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipt - UberX x SpaceX</title>
+    <link rel="stylesheet" href="../css/app.css" />
+  </head>
+  <body>
+    <!--
+      Recibo final del viaje.
+      Mantiene los mismos tokens visuales para que el flujo se sienta consistente.
+    -->
+    <main class="phone shell receipt-screen">
+      <header class="page-header compact">
+        <a href="./confirm.html" aria-label="Back">←</a>
+        <h1>Receipt</h1>
+      </header>
+
+      <section class="receipt-total glass">
+        <small>Total</small>
+        <strong>$859.50</strong>
+        <span>Space Ride Fare</span>
+      </section>
+
+      <section class="receipt-card glass">
+        <h2>Category Selected</h2>
+        <p>15th Oct 2024, 08:15 AM</p>
+
+        <h2>Flight Details</h2>
+        <p>Earth - JFK 10:30 AM → Marte - LAX 01:45 PM</p>
+
+        <dl>
+          <div><dt>Flight Number</dt><dd>AN123</dd></div>
+          <div><dt>Seat</dt><dd>24A</dd></div>
+          <div><dt>Fare</dt><dd>$780.00</dd></div>
+          <div><dt>Taxes & Fees</dt><dd>$79.50</dd></div>
+          <div class="total-line"><dt>Total</dt><dd>$859.50</dd></div>
+          <div><dt>Payment Method</dt><dd>Amex 5678</dd></div>
+          <div><dt>Category</dt><dd>Crew Dragon</dd></div>
+        </dl>
+      </section>
+
+      <footer class="receipt-actions">
+        <a href="./home.html">Home</a>
+        <a href="./receipt.html">Download</a>
+        <a href="./payment-methods.html">Categorize</a>
+      </footer>
+    </main>
+  </body>
+</html>

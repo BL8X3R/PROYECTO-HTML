@@ -1,0 +1,900 @@
+/* Variables generales del proyecto para repetir colores, radios y sombras con consistencia. */
+:root {
+  --bg: #07131d;
+  --panel: rgba(34, 31, 47, 0.78);
+  --panel-strong: rgba(48, 45, 61, 0.9);
+  --glass: rgba(255, 255, 255, 0.09);
+  --stroke: rgba(221, 226, 244, 0.18);
+  --text: #f6f7fb;
+  --text-2: #c6c2d3;
+  --muted: #8d92a2;
+  --accent: #ffc61a;
+  --danger: #ff6571;
+  --coin: #5aa4df;
+  --radius-xl: 22px;
+  --radius-lg: 16px;
+  --blur: 18px;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Reset pequeno para que los navegadores arranquen desde una base parecida. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #10141c;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 50% 12%, rgba(26, 124, 128, 0.24), transparent 26rem),
+    linear-gradient(145deg, #08151d 0%, #1a1428 58%, #210d21 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Contenedor que imita la proporcion de una app movil y se centra en pantallas grandes. */
+.phone {
+  position: relative;
+  width: min(100vw, 480px);
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+@media (min-width: 720px) {
+  body {
+    padding: 22px;
+  }
+
+  .phone {
+    min-height: calc(100vh - 44px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 32px;
+    box-shadow: 0 24px 90px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.shell {
+  background:
+    radial-gradient(circle at 70% 10%, rgba(32, 137, 128, 0.18), transparent 15rem),
+    linear-gradient(160deg, #07151d 0%, #18162a 48%, #241024 100%);
+}
+
+.glass {
+  border: 1px solid var(--stroke);
+  background: var(--glass);
+  backdrop-filter: blur(var(--blur));
+  box-shadow: var(--shadow);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.status-bar {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 32px 0;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.status-icons {
+  letter-spacing: 1px;
+}
+
+.home-indicator {
+  position: absolute;
+  right: 50%;
+  bottom: 12px;
+  z-index: 5;
+  width: 136px;
+  height: 5px;
+  border-radius: 999px;
+  background: #fff;
+  transform: translateX(50%);
+}
+
+/* Splash */
+.splash-screen {
+  display: grid;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 30% 82%, rgba(255, 255, 255, 0.16), transparent 7rem),
+    linear-gradient(160deg, #07151d 0%, #19172d 55%, #260f25 100%);
+}
+
+.splash-link {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 74vh;
+  isolation: isolate;
+}
+
+.brand-logo {
+  z-index: 2;
+  margin-top: 10vh;
+  font-size: clamp(4rem, 17vw, 6rem);
+  font-weight: 950;
+  letter-spacing: -0.08em;
+}
+
+.orbit-streak {
+  position: absolute;
+  right: 10px;
+  bottom: 16%;
+  width: 74%;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95));
+  filter: drop-shadow(-20px 40px 20px rgba(255, 255, 255, 0.22));
+  transform: rotate(-50deg);
+}
+
+/* Home */
+.home-screen {
+  padding: 0 22px 110px;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 22px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.user-header h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.safety-card {
+  display: grid;
+  grid-template-columns: 1fr 136px;
+  align-items: center;
+  min-height: 174px;
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: var(--radius-lg);
+}
+
+.safety-card h2 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 1.28;
+}
+
+.safety-card a {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.quick-actions a {
+  display: grid;
+  place-items: center;
+  min-height: 110px;
+  border-radius: 12px;
+  color: #15162a;
+  background: #f4f4f6;
+  font-weight: 900;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.quick-actions a:hover,
+.quick-actions a:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+  outline: none;
+}
+
+.quick-actions img {
+  width: 62px;
+  height: 62px;
+}
+
+.search-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-top: 26px;
+  padding: 14px 14px 14px 20px;
+  border-radius: 18px;
+}
+
+.search-card input,
+.payment-search input {
+  width: 100%;
+  border: 0;
+  color: var(--text);
+  background: transparent;
+  outline: 0;
+}
+
+.search-card input::placeholder,
+.payment-search input::placeholder {
+  color: var(--text);
+  opacity: 0.88;
+}
+
+.search-card button {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 17px;
+  border: 0;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.destination-list {
+  margin-top: 18px;
+}
+
+.destination-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.destination-row + .destination-row span {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.destination-row img {
+  width: 58px;
+  height: 58px;
+}
+
+.destination-row span {
+  display: grid;
+  gap: 4px;
+  min-height: 74px;
+  align-content: center;
+}
+
+.destination-row strong {
+  font-size: 22px;
+}
+
+.destination-row small {
+  color: var(--text-2);
+  font-size: 16px;
+}
+
+.bottom-nav {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  align-items: center;
+  min-height: 96px;
+  padding: 12px 42px 20px;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.bottom-nav a {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+  color: var(--text-2);
+  font-size: 21px;
+}
+
+.bottom-nav [aria-current="page"] {
+  color: var(--text);
+}
+
+.nav-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Travel y confirmacion */
+.travel-screen {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 55% 40%, rgba(255, 255, 255, 0.08) 0 1px, transparent 2px),
+    radial-gradient(circle at 15% 72%, rgba(137, 85, 156, 0.18), transparent 10rem),
+    #020407;
+  background-size: 19px 19px, auto, auto;
+}
+
+.over-space {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.back-button,
+.page-header a {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  font-size: 30px;
+  line-height: 1;
+}
+
+.back-button {
+  position: absolute;
+  top: 58px;
+  left: 32px;
+  z-index: 4;
+}
+
+.route-map {
+  position: relative;
+  min-height: 510px;
+  padding-top: 114px;
+}
+
+.dotted-orbit {
+  position: absolute;
+  top: 150px;
+  left: 34%;
+  width: 220px;
+  height: 170px;
+  border-top: 2px dashed rgba(199, 207, 245, 0.9);
+  border-radius: 50%;
+  transform: rotate(-23deg);
+}
+
+.planet-chip {
+  position: absolute;
+}
+
+.planet-chip img {
+  width: 72px;
+  height: 72px;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.42));
+}
+
+.planet-chip a {
+  position: absolute;
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+  min-width: 138px;
+  padding: 14px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  font-size: 24px;
+}
+
+.earth-chip {
+  top: 310px;
+  left: 22%;
+}
+
+.earth-chip a {
+  top: 48px;
+  left: 34px;
+}
+
+.mars-chip {
+  top: 136px;
+  right: 18%;
+}
+
+.mars-chip a {
+  top: 48px;
+  left: 8px;
+}
+
+.sheet-control {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.booking-sheet {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 376px;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  background:
+    radial-gradient(circle at 86% 42%, rgba(255, 255, 255, 0.08), transparent 10rem),
+    rgba(35, 25, 45, 0.82);
+  transition: min-height 240ms ease;
+}
+
+.sheet-control:checked + .booking-sheet,
+.booking-sheet.expanded {
+  min-height: 540px;
+}
+
+.sheet-handle {
+  display: block;
+  width: 52px;
+  height: 4px;
+  margin: 12px auto 8px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.68);
+  cursor: pointer;
+}
+
+.fare-note {
+  margin: 0 0 10px;
+  color: var(--text-2);
+  text-align: center;
+}
+
+.ship-list {
+  max-height: 294px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.sheet-control:checked + .booking-sheet .ship-list {
+  max-height: 390px;
+}
+
+.ship-card {
+  display: grid;
+  grid-template-columns: 76px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  min-height: 98px;
+  padding: 18px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.ship-card.active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ship-card img {
+  width: 68px;
+  height: 68px;
+}
+
+.ship-card span,
+.ship-hero-row {
+  min-width: 0;
+}
+
+.ship-card strong {
+  display: block;
+  font-size: 21px;
+}
+
+.ship-card small {
+  display: block;
+  margin-top: 4px;
+  color: var(--text-2);
+  font-size: 16px;
+}
+
+.ship-card b,
+.ship-hero b {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 23px;
+}
+
+.ship-card i,
+.ship-hero i {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #80c8ff, #3672ae);
+}
+
+.wallet-row {
+  display: grid;
+  grid-template-columns: 54px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  min-height: 84px;
+  padding: 0 26px 0 44px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 22px;
+  font-weight: 750;
+}
+
+.wallet-row > span {
+  font-size: 34px;
+}
+
+.swipe-confirm {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: 70px;
+  margin: 0 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.13);
+  overflow: hidden;
+}
+
+.swipe-confirm > span {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 100%;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 46px;
+}
+
+.swipe-confirm input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.swipe-confirm a {
+  padding-left: 96px;
+  color: var(--text-2);
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.ship-hero {
+  display: grid;
+  padding: 24px 24px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ship-hero > img {
+  width: 138px;
+  height: 138px;
+  justify-self: center;
+}
+
+.ship-hero-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.ship-hero h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.ship-hero h1 small {
+  color: var(--text-2);
+  font-size: 16px;
+}
+
+.ship-hero p {
+  margin: 4px 0 0;
+  color: var(--text-2);
+  font-size: 16px;
+}
+
+/* Pagos */
+.payments-screen {
+  min-height: 100vh;
+  padding: 28px 32px 132px;
+  background: var(--bg);
+}
+
+.page-header {
+  display: grid;
+  grid-template-columns: 54px 1fr 54px;
+  align-items: center;
+}
+
+.page-header a {
+  background: transparent;
+  font-size: 42px;
+}
+
+.page-header h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 32px;
+}
+
+.page-header.compact {
+  grid-template-columns: 48px 1fr 48px;
+  padding-top: 18px;
+}
+
+.payment-search {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  min-height: 92px;
+  margin-top: 84px;
+  padding: 0 26px;
+  border: 2px solid rgba(147, 159, 181, 0.36);
+  border-radius: 15px;
+}
+
+.payment-search span {
+  color: var(--muted);
+  font-size: 58px;
+  line-height: 0;
+}
+
+.payment-search input {
+  font-size: 32px;
+}
+
+.payment-list {
+  display: grid;
+  gap: 34px;
+  margin-top: 34px;
+}
+
+.payment-card {
+  display: grid;
+  grid-template-columns: 78px 1fr auto auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 134px;
+  padding: 24px 34px 24px 48px;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(4, 18, 27, 0.46);
+  text-align: left;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.payment-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.payment-card img {
+  width: 48px;
+  height: 48px;
+}
+
+.payment-card span {
+  display: grid;
+  gap: 8px;
+}
+
+.payment-card strong {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.payment-card small {
+  color: var(--text-2);
+  font-size: 27px;
+}
+
+.payment-card b {
+  padding: 5px 20px;
+  border-radius: 999px;
+  color: #6f4800;
+  background: var(--accent);
+  font-size: 23px;
+}
+
+.payment-card i {
+  color: var(--text-2);
+  font-size: 34px;
+  font-style: normal;
+}
+
+.payment-card .delete {
+  color: var(--danger);
+}
+
+.add-method {
+  position: absolute;
+  right: 32px;
+  bottom: 32px;
+  left: 32px;
+  display: grid;
+  place-items: center;
+  min-height: 96px;
+  border: 2px solid rgba(255, 255, 255, 0.23);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 30px;
+  font-weight: 850;
+}
+
+/* Recibo */
+.receipt-screen {
+  min-height: 100vh;
+  padding: 0 24px 28px;
+}
+
+.receipt-total {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  margin-top: 44px;
+  padding: 30px 18px;
+  border-radius: var(--radius-xl);
+}
+
+.receipt-total small,
+.receipt-total span {
+  color: var(--text-2);
+}
+
+.receipt-total strong {
+  font-size: 54px;
+}
+
+.receipt-card {
+  margin-top: 22px;
+  padding: 24px;
+  border-radius: var(--radius-xl);
+}
+
+.receipt-card h2 {
+  margin: 20px 0 6px;
+  color: var(--text);
+  font-size: 18px;
+}
+
+.receipt-card h2:first-child {
+  margin-top: 0;
+}
+
+.receipt-card p {
+  margin: 0;
+  color: var(--text-2);
+}
+
+.receipt-card dl {
+  margin: 22px 0 0;
+}
+
+.receipt-card div {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.receipt-card dt {
+  color: var(--text-2);
+}
+
+.receipt-card dd {
+  margin: 0;
+  text-align: right;
+}
+
+.total-line {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.receipt-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.receipt-actions a {
+  display: grid;
+  place-items: center;
+  min-height: 50px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text-2);
+  font-weight: 800;
+}
+
+/* Ajustes responsivos para que los textos no se salgan en pantallas pequenas. */
+@media (max-width: 420px) {
+  .home-screen {
+    padding-inline: 16px;
+  }
+
+  .safety-card {
+    grid-template-columns: 1fr 112px;
+  }
+
+  .quick-actions {
+    gap: 12px;
+  }
+
+  .payment-card {
+    grid-template-columns: 48px 1fr auto;
+    padding: 20px 18px;
+  }
+
+  .payment-card strong,
+  .payment-search input,
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .payment-card small {
+    font-size: 20px;
+  }
+
+  .payment-card b {
+    font-size: 18px;
+  }
+
+  .payment-card i:first-of-type {
+    display: none;
+  }
+
+  .ship-card {
+    grid-template-columns: 58px 1fr auto;
+    gap: 12px;
+    padding-inline: 16px;
+  }
+
+  .ship-card strong,
+  .wallet-row,
+  .destination-row strong {
+    font-size: 19px;
+  }
+}

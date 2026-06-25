@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 100" role="img" aria-label="International Space Station">
+  <g transform="rotate(-20 70 50)">
+    <rect x="18" y="44" width="104" height="12" rx="3" fill="#87d4d9"/>
+    <rect x="58" y="34" width="24" height="32" rx="5" fill="#e7edf4"/>
+    <rect x="4" y="38" width="20" height="24" fill="#17485a"/>
+    <rect x="116" y="38" width="20" height="24" fill="#17485a"/>
+    <path d="M68 22v56M44 28l52 44M96 28 44 72" stroke="#cbd5e1" stroke-width="4"/>
+  </g>
+</svg>

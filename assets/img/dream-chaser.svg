@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" role="img" aria-label="Dream Chaser">
+  <g transform="rotate(-22 80 60)">
+    <path d="M24 68 80 22l56 46-40 18H64L24 68Z" fill="#f4f7fb"/>
+    <path d="M80 22 96 86H64L80 22Z" fill="#2b2f36"/>
+    <path d="M28 72 8 92l50-8m74-12 20 20-50-8" fill="#2b2f36"/>
+    <path d="M62 56h36" stroke="#79d4ff" stroke-width="5"/>
+  </g>
+</svg>

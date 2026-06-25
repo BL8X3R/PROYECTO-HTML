@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel - UberX x SpaceX</title>
+    <link rel="stylesheet" href="../css/app.css" />
+  </head>
+  <body>
+    <!--
+      Pantalla de seleccion del viaje.
+      El checkbox #sheet-toggle simula el sheet expandido sin usar JavaScript.
+    -->
+    <main class="phone shell travel-screen">
+      <div class="status-bar over-space" aria-hidden="true">
+        <span>12:31</span>
+        <span class="status-icons">▮▮ ︿ ▱</span>
+      </div>
+
+      <a class="back-button" href="./home.html" aria-label="Back">‹</a>
+
+      <section class="route-map" aria-label="Ruta Tierra a Marte">
+        <span class="dotted-orbit" aria-hidden="true"></span>
+        <article class="planet-chip earth-chip">
+          <img src="../assets/img/earth.svg" alt="" />
+          <a href="./home.html">Earth <span aria-hidden="true">›</span></a>
+        </article>
+        <article class="planet-chip mars-chip">
+          <img src="../assets/img/mars.svg" alt="" />
+          <a href="./confirm.html">Mars <span aria-hidden="true">›</span></a>
+        </article>
+      </section>
+
+      <input class="sheet-control" type="checkbox" id="sheet-toggle" />
+
+      <section class="booking-sheet glass" aria-label="Opciones de naves">
+        <label class="sheet-handle" for="sheet-toggle" aria-label="Expandir lista de naves"></label>
+        <p class="fare-note">Fares are higher due to space debris</p>
+
+        <ul class="ship-list">
+          <li class="ship-card active">
+            <img src="../assets/img/crew-dragon.svg" alt="" />
+            <span><strong>Crew Dragon</strong><small>Next Launch: 12/03/53, 19:30</small></span>
+            <b>48.5 <i aria-hidden="true"></i></b>
+          </li>
+          <li class="ship-card">
+            <img src="../assets/img/starliner.svg" alt="" />
+            <span><strong>Starliner</strong><small>Next Launch: 24/03/53, 12:30</small></span>
+            <b>51.2 <i aria-hidden="true"></i></b>
+          </li>
+          <li class="ship-card">
+            <img src="../assets/img/dream-chaser.svg" alt="" />
+            <span><strong>Dream Chaser</strong><small>Next Launch: 24/03/53, 12:30</small></span>
+            <b>102.5 <i aria-hidden="true"></i></b>
+          </li>
+        </ul>
+
+        <a class="wallet-row" href="./payment-methods.html">
+          <span aria-hidden="true">❖</span>
+          Connect Wallet
+          <strong aria-hidden="true">›</strong>
+        </a>
+
+        <label class="swipe-confirm">
+          <span aria-hidden="true">›</span>
+          <input type="range" min="0" max="100" value="0" aria-label="Swipe to confirm your booking" />
+          <a href="./confirm.html">Swipe To Confirm Your Booking</a>
+        </label>
+      </section>
+    </main>
+  </body>
+</html>
