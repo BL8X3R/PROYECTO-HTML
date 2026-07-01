@@ -208,6 +208,8 @@ img {
 }
 
 .quick-actions {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -222,6 +224,7 @@ img {
   color: #15162a;
   background: #f4f4f6;
   font-weight: 900;
+  cursor: pointer;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -274,15 +277,20 @@ img {
 }
 
 .destination-list {
+  position: relative;
+  z-index: 2;
   margin-top: 18px;
 }
 
 .destination-row {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 64px 1fr;
   gap: 16px;
   align-items: center;
   padding: 12px 0;
+  cursor: pointer;
 }
 
 .destination-row + .destination-row span {
