@@ -27,7 +27,7 @@ html {
   min-height: 100%;
   background: #10141c;
 }
-
+  
 body {
   min-height: 100vh;
   margin: 0;
@@ -897,4 +897,129 @@ img {
   .destination-row strong {
     font-size: 19px;
   }
+}
+
+.progress-title{
+    margin:24px 0 15px;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+    color:#fff;
+}
+.progress-toggle{
+    display:none;
+}
+
+.progress-button{
+    display:block;
+    width:100%;
+    margin:16px 0;
+    padding:12px;
+    background:#ffc61a;
+    color:#111;
+    text-align:center;
+    border-radius:12px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.progress-button:hover{
+    background:#ffd84d;
+}
+
+.progress-container{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.progress-bar{
+    width:100%;
+    height:18px;
+    background:rgba(255,255,255,.15);
+    border-radius:999px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#00bfff,#00ff99);
+}
+
+.progress-status{
+    display:flex;
+    justify-content:space-between;
+    margin-top:12px;
+    font-size:14px;
+    font-weight:bold;
+    color:#ffffff;
+}
+
+.progress-toggle:checked + .progress-button + .progress-container .progress-fill{
+    animation:flight 5s forwards;
+}
+
+.progress-toggle:checked + .progress-button + .progress-container .progress-status span:nth-child(1){
+    color:#00ff99;
+}
+
+.progress-toggle:checked + .progress-button + .progress-container .progress-status span:nth-child(2){
+    animation:middle 5s forwards;
+}
+
+.progress-toggle:checked + .progress-button + .progress-container .progress-status span:nth-child(3){
+    animation:end 5s forwards;
+}
+
+@keyframes flight{
+
+    0%{
+        width:0%;
+    }
+
+    50%{
+        width:50%;
+    }
+
+    100%{
+        width:100%;
+    }
+
+}
+
+@keyframes middle{
+
+    0%{
+        color:#ffffff;
+    }
+
+    40%{
+        color:#ffffff;
+    }
+
+    50%{
+        color:#00ff99;
+    }
+
+    100%{
+        color:#00ff99;
+    }
+
+}
+
+@keyframes end{
+
+    0%{
+        color:#ffffff;
+    }
+
+    90%{
+        color:#ffffff;
+    }
+
+    100%{
+        color:#00ff99;
+    }
+
 }

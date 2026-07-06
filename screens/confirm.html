@@ -1,62 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Confirm - UberX x SpaceX</title>
-    <link rel="stylesheet" href="../css/app.css" />
-  </head>
-  <body>
-    <!--
-      Vista de confirmacion.
-      Reutiliza el mapa y cambia la lista por una tarjeta destacada del Crew Dragon.
-    -->
-    <main class="phone shell travel-screen confirm-screen">
-      <div class="status-bar over-space" aria-hidden="true">
-        <span>12:31</span>
-        <span class="status-icons">▮▮ ︿ ▱</span>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirm - UberX x SpaceX</title>
+  <link rel="stylesheet" href="../css/app.css" />
+</head>
 
-      <a class="back-button" href="./destination.html" aria-label="Back">‹</a>
+<body>
 
-      <section class="route-map" aria-label="Ruta Tierra a Marte">
-        <span class="dotted-orbit" aria-hidden="true"></span>
-        <article class="planet-chip earth-chip">
-          <img src="../assets/img/earth.svg" alt="" />
-          <a href="./destination.html">Earth <span aria-hidden="true">›</span></a>
-        </article>
-        <article class="planet-chip mars-chip">
-          <img src="../assets/img/mars.svg" alt="" />
-          <a href="./confirm.html">Mars <span aria-hidden="true">›</span></a>
-        </article>
-      </section>
+  <!-- Vista de confirmación -->
+  <main class="phone shell travel-screen confirm-screen">
 
-      <section class="booking-sheet glass expanded" aria-label="Confirmacion del viaje">
-        <span class="sheet-handle" aria-hidden="true"></span>
-        <p class="fare-note">Fares are higher due to space debris</p>
+    <div class="status-bar over-space" aria-hidden="true">
+      <span>12:31</span>
+      <span class="status-icons">▮▮ ︿ ▱</span>
+    </div>
 
-        <article class="ship-hero">
-          <img src="../assets/img/crew-dragon.svg" alt="" />
-          <div class="ship-hero-row">
-            <h1>Crew Dragon <small>♙7</small></h1>
-            <b>48.5 <i aria-hidden="true"></i></b>
-          </div>
-          <p>Next Launch: 12/03/53, 19:30</p>
-          <p>Journey duration: 18 Days, 13 Hours</p>
-        </article>
+    <a class="back-button" href="./destination.html" aria-label="Back">‹</a>
 
-        <a class="wallet-row" href="./payment-methods.html">
-          <span aria-hidden="true">❖</span>
-          Connect Wallet
-          <strong aria-hidden="true">›</strong>
-        </a>
+    <section class="route-map" aria-label="Ruta Tierra a Marte">
 
-        <label class="swipe-confirm">
+      <span class="dotted-orbit" aria-hidden="true"></span>
+
+      <article class="planet-chip earth-chip">
+        <img src="../assets/img/earth.svg" alt="" />
+        <a href="./destination.html">
+          Earth
           <span aria-hidden="true">›</span>
-          <input type="range" min="0" max="100" value="100" aria-label="Swipe to confirm your booking" />
-          <a href="./receipt.html">Swipe To Confirm Your Booking</a>
+        </a>
+      </article>
+
+      <article class="planet-chip mars-chip">
+        <img src="../assets/img/mars.svg" alt="" />
+        <a href="./confirm.html">
+          Mars
+          <span aria-hidden="true">›</span>
+        </a>
+      </article>
+
+    </section>
+
+    <section class="booking-sheet glass expanded" aria-label="Confirmación del viaje">
+
+      <span class="sheet-handle" aria-hidden="true"></span>
+
+      <p class="fare-note">
+        Fares are higher due to space debris
+      </p>
+
+      <article class="ship-hero">
+
+        <img src="../assets/img/crew-dragon.svg" alt="Crew Dragon" />
+
+        <div class="ship-hero-row">
+          <h1>
+            Crew Dragon
+            <small>♙7</small>
+          </h1>
+
+          <b>
+            48.5
+            <i aria-hidden="true"></i>
+          </b>
+        </div>
+
+        <p>Next Launch: 12/03/53, 19:30</p>
+        <p>Journey duration: 18 Days, 13 Hours</p>
+
+        <!-- Barra de progreso -->
+
+        <p class="progress-title">
+          Flight Progress
+        </p>
+
+        <input
+          type="checkbox"
+          id="flight-progress"
+          class="progress-toggle"
+        >
+
+        <label for="flight-progress" class="progress-button">
+          Start Flight
         </label>
-      </section>
-    </main>
-  </body>
+
+        <div class="progress-container" aria-label="Flight progress">
+
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+
+          <div class="progress-status">
+            <span>Launch</span>
+            <span>In Transit</span>
+            <span>Arrived</span>
+          </div>
+
+        </div>
+
+      </article>
+
+      <a class="wallet-row" href="./payment-methods.html">
+        <span aria-hidden="true">❖</span>
+        Connect Wallet
+        <strong aria-hidden="true">›</strong>
+      </a>
+
+      <label class="swipe-confirm">
+        <span aria-hidden="true">›</span>
+
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="100"
+          aria-label="Swipe to confirm your booking"
+        />
+
+        <a href="./receipt.html">
+          Swipe To Confirm Your Booking
+        </a>
+      </label>
+
+    </section>
+
+  </main>
+
+</body>
 </html>
