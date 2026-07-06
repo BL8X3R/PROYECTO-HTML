@@ -168,13 +168,28 @@ img {
   padding: 0 22px 110px;
 }
 
-.user-header {
+.home-topbar {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 16px;
   padding-top: 22px;
 }
 
+
+/*-------CAMBIOS EXAMEN--------*/
+.settings-shortcut {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  font-size: 24px;
+}
+/*------------------------------*/
 .avatar {
   width: 50px;
   height: 50px;
@@ -768,6 +783,176 @@ img {
   font-size: 30px;
   font-weight: 850;
 }
+/*-------CAMBIOS EXAMEN--------*/
+/* Settings */
+.settings-screen {
+  min-height: 100vh;
+  padding: 0 24px 32px;
+  transition: background 220ms ease, color 220ms ease;
+}
+
+.settings-screen:has(#theme-mode:checked) {
+  color: #172033;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(101, 185, 208, 0.34), transparent 24rem),
+    linear-gradient(160deg, #eef7fb 0%, #dbe7f3 52%, #f5edf7 100%);
+}
+
+.settings-screen:has(#theme-mode:checked) .glass,
+.settings-screen:has(#theme-mode:checked) .setting-card {
+  border-color: rgba(23, 32, 51, 0.15);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.settings-hero {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-top: 30px;
+  padding: 22px;
+  border-radius: var(--radius-xl);
+}
+
+.settings-hero > span {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 28px;
+}
+
+.settings-hero h2 {
+  margin: 4px 0 0;
+  font-size: 24px;
+}
+
+.settings-form {
+  display: grid;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.setting-card {
+  border-radius: var(--radius-xl);
+  padding: 20px;
+}
+
+.setting-card h2,
+.language-card legend {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 850;
+}
+/*tema-switch*/
+.theme-switch {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  min-height: 58px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.theme-switch input {
+  position: absolute;
+  opacity: 0;
+}
+
+.theme-switch span {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: calc(50% - 8px);
+  height: calc(100% - 12px);
+  border-radius: 999px;
+  background: var(--accent);
+  transition: transform 180ms ease;
+}
+
+.theme-switch input:checked + span {
+  transform: translateX(calc(100% + 4px));
+}
+
+.theme-switch strong,
+.theme-switch em {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-style: normal;
+  font-weight: 850;
+}
+/*lenguaje*/
+.language-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.language-options label {
+  cursor: pointer;
+}
+
+.language-options input {
+  position: absolute;
+  opacity: 0;
+}
+
+.language-options span {
+  display: grid;
+  place-items: center;
+  min-height: 54px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-2);
+  font-weight: 900;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.language-options input:checked + span {
+  color: #201600;
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+/* Tamaño de texto */
+.text-size-card input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.text-preview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.text-preview * {
+  display: grid;
+  place-items: center;
+  min-height: 54px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.text-preview strong {
+  font-size: 24px;
+}
+
+.text-preview b {
+  min-height: 68px;
+  color: var(--accent);
+  font-size: 32px;
+}
+/*---------------------------------------------------------------*/
 
 /* Recibo */
 .receipt-screen {
@@ -869,6 +1054,19 @@ img {
 
   .quick-actions {
     gap: 12px;
+  }
+
+  .settings-screen {
+    padding-inline: 16px;
+  }
+
+  .settings-hero {
+    grid-template-columns: 48px 1fr;
+    padding: 18px;
+  }
+
+  .language-options {
+    gap: 8px;
   }
 
   .payment-card {

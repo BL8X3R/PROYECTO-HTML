@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - UberX x SpaceX</title>
+    <link rel="stylesheet" href="../css/app.css" />
+  </head>
+  <body>
+    <!--
+      Pantalla de preferencias del usuario.
+      Los controles son simulados con HTML y CSS.
+    -->
+    <main class="phone shell settings-screen">
+      <header class="page-header compact">
+        <a href="./home.html" aria-label="Back">←</a>
+        <h1>Settings</h1>
+      </header>
+
+      <section class="settings-hero glass" aria-label="Preferencias del usuario">
+        <span aria-hidden="true">⚙</span>
+        <div>
+          <p>Space Ride Preferences</p>
+          <h2>Adjust your travel interface</h2>
+        </div>
+      </section>
+
+      <form class="settings-form" aria-label="User settings">
+        <section class="setting-card glass">
+          <div class="setting-copy">
+            <h2>Appearance</h2>
+            <p>Switch between dark and clear travel mode.</p>
+          </div>
+
+          <label class="theme-switch" for="theme-mode">
+            <input id="theme-mode" type="checkbox" />
+            <span aria-hidden="true"></span>
+            <strong>Dark</strong>
+            <em>Clear</em>
+          </label>
+        </section>
+
+        <fieldset class="setting-card glass language-card">
+          <legend>Language</legend>
+          <p>Select the interface language.</p>
+
+          <div class="language-options">
+            <label>
+              <input type="radio" name="language" checked />
+              <span>ES</span>
+            </label>
+            <label>
+              <input type="radio" name="language" />
+              <span>EN</span>
+            </label>
+            <label>
+              <input type="radio" name="language" />
+              <span>PT</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <section class="setting-card glass text-size-card">
+          <div class="setting-copy">
+            <h2>Text Size</h2>
+            <p>Move the range to simulate a larger reading mode.</p>
+          </div>
+
+          <label for="text-size">Interface scale</label>
+          <input id="text-size" type="range" min="1" max="3" value="2" />
+
+          <div class="text-preview" aria-hidden="true">
+            <small>Aa</small>
+            <strong>Aa</strong>
+            <b>Aa</b>
+          </div>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
